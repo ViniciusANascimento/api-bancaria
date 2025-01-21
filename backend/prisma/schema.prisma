@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Status {
+  PENDENTE
+  PAGO
+  ATRASADO
+}
+
+model Client {
+  id         Int      @id @default(autoincrement())
+  name       String
+  cpf        String   @unique
+  pix        Pix[]
+  email      String   @unique @db.VarChar(100)
+  password   String   @db.VarChar(255)
+  created_at DateTime @default(now())
+}
+
+model Pix {
+  id         String   @id @default(uuid())
+  value      Float
+  client     Client   @relation(fields: [clientCPF], references: [cpf])
+  clientCPF  String
+  clientId   Int
+  status     Status   @default(PENDENTE)
+  created_at DateTime @default(now())
+  update_at  DateTime @default(now())
+}

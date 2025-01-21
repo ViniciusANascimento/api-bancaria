@@ -31,68 +31,68 @@ Front-end:
 3. Listar Pix: Interface que visualiza os pix's registrados.
 4. Pagamento: Interface que possibilita fazer pagamento do pix.
 
-## Como executar o projeto
+## ***Como executar o projeto***
 ### 1. Rodando o Back-end
-        1. Clone o repositório:
-        ```bash
-        git clone https://github.com/ViniciusANascimento/api-bancaria.git
-        cd api-bancaria
-        ```
-        2. Instale as dependencias do back-end:
-        ```bash
-        cd backend
-        npm install
-        ```
-        3. Crie arquivo .env e configure
-        ```bash
-        #POSTGRES
-        DATABASE_URL="postgresql://valida_pix:valida_pix-dev@localhost:5432/validapix?schema=public"
+1. Clone o repositório:
+```bash
+git clone https://github.com/ViniciusANascimento/api-bancaria.git
+cd api-bancaria
+```
+2. Instale as dependencias do back-end:
+```bash
+cd backend
+npm install
+```
+3. Crie arquivo .env e configure
+```bash
+#POSTGRES
+DATABASE_URL="postgresql://valida_pix:valida_pix-dev@localhost:5432/validapix?schema=public"
 
-        #JWT
-        JWT_EXPIRATION=7d
-        JWT_SECRET="sa4d54sa8d48sac435xz8cx3z4c1z8x6c31"
+#JWT
+JWT_EXPIRATION=7d
+JWT_SECRET="sa4d54sa8d48sac435xz8cx3z4c1z8x6c31"
 
-        #SERVER
-        PORT=3001
-        HOST=localhost
-        ```
-        4. Execute o Docker
-        ```
-        docker compose up -d
-        ```
-        5. Realize as migrações
-        ```
-        npx prisma migrate deploy
-        ```
-        6. Atualize as informações do banco de dados
-        ```
-        npx prisma generate
-        ```
-        7. Execute a aplicação
-        ```bash
-        npm run dev
-        ```
+#SERVER
+PORT=3001
+HOST=localhost
+```
+4. Execute o Docker
+```
+docker compose up -d
+```
+5. Realize as migrações
+```
+npx prisma migrate deploy
+```
+6. Atualize as informações do banco de dados
+```
+npx prisma generate
+```
+7. Execute a aplicação
+```bash
+npm run dev
+```
 
-        Com isso a aplicação estará sendo executada em http://localhost:3001
+Com isso a aplicação estará sendo executada em http://localhost:3001
 
 ### 2. Rodando o Front-end
-        1. Clone o repositório:
-        ```bash
-        git clone https://github.com/ViniciusANascimento/api-bancaria.git
-        cd api-bancaria
-        ```
-        2. Instale as dependencias do back-end:
-        ```bash
-        cd frontend
-        npm install
-        ``` 
-        3. Execute a aplicação
-        ```bash
-        npm start
-        ```
+1. Clone o repositório:
+```bash
+git clone https://github.com/ViniciusANascimento/api-bancaria.git
+cd api-bancaria
+```
+2. Instale as dependencias do back-end:
+```bash
+cd frontend
+npm install
+``` 
+3. Execute a aplicação
+```bash
+npm start
+```
 
-        A Aplicação estará disponivel em http://localhost:3000
-## Rotas
+A Aplicação estará disponivel em http://localhost:3000
+## ***Rotas***
 ### back-end:
 ```
 Login:
@@ -114,6 +114,6 @@ JWT
 ```
 
 
-## Primeiros Passos
+## ***Primeiros Passos***
 1. Apos o sistema do Front-end abrir automaticamente para a tela de Login, clicar em **Cadastrar-se** para criar um cadastro de cliente.
 2. Com o sistema conectado pode realizar as operações de **Cadastro** e **Consulta** de Pix, como tambem podendo pagar pix já cadastrados.
